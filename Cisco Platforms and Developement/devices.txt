@@ -1,0 +1,13 @@
+# MERAKI (Management for small business)
+
+- Cloud Platform
+- Report back to controller in the Cloud
+- No configuration directly in Meraki device
+- Easy s2s VPN
+- One login to manage all the equipment
+
+- Dashboard API
+- Scanning API 
+- Captive Portal API : Guest connection to Wifi
+- Webhooks
+

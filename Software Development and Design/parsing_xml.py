@@ -1,4 +1,8 @@
-# import xml.etree.ElementTree as ET
+# Parsing XML in Python:
+# xml.etree.ElementTree
+# lxml etree
+# xmltodict
+
 from lxml import etree as ET # extension of element tree
 
 def method_lxml():

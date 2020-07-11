@@ -1,0 +1,22 @@
+#instructions needs to run
+#name of the playbook
+#what device to connect to
+#what the tasks I want to do
+#name of the task
+#module then command i want to do , paramters , path of the file the output will be saved in.
+
+---
+- hosts: linuxhosts
+  tasks:
+    - name: get system status
+      shell: uname -a > /home/rana/Desktop/output.txt
+    - name: print current user
+      shell: whoami >> /home/rana/Desktop/output.txt
+      
+    
+
+
+
+
+
+      

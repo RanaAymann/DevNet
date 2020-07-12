@@ -26,23 +26,24 @@ for tenant in tenants:
 
 # Create a new Tenant
 new_tenant = Tenant("Tenant_Name_Here")
-new_tenant.get_url()
-new_tenant.get_json()
 
 
 # Create the application profile and the EPG
-anp = AppProfile('Knoxs_app', new_tenant)
-epg = EPG('Knoxs_epg', anp)
+# the Parent and what under it , EPG : End Point Group
+anp = AppProfile('Ranas_app', new_tenant)
+epg = EPG('Ranas_epg', anp)
 
 # Create the L3 Namespace
-context = Context('Knoxs_VRF', new_tenant)
-bridge_domain = BridgeDomain('Knoxs_bd', new_tenant)
+context = Context('Ranas_VRF', new_tenant)
+bridge_domain = BridgeDomain('Ranas_bd', new_tenant)
 
 # Associate the BD with the L3 Namespace
 bridge_domain.add_context(context)
 epg.add_bd(bridge_domain)
 
 ##### Tenant Creation is completed #####
+# get_url , get_json fuctions from acitoolkit
+
 print(new_tenant.get_url())
 print(new_tenant.get_json())
 response = session.push_to_apic(

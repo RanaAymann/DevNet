@@ -1,4 +1,4 @@
-# Python ACI Toolkit - www.acitoolkit.readthedocs.io - github.com/datacenter/acitoolkit
+# Python ACI Toolkit SDK - www.acitoolkit.readthedocs.io - github.com/datacenter/acitoolkit
 # Creating full Tenant with ACI Toolkit
 
 from acitoolkit.acitoolkit import *

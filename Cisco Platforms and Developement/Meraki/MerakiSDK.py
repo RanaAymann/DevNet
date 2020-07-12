@@ -1,3 +1,5 @@
+#SDK Python library for Meraki
+
 from meraki_sdk.meraki_sdk_client import MerakiSdkClient
 import json
 from pprint import pprint

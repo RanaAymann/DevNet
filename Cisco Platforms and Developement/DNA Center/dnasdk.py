@@ -3,6 +3,8 @@ import json
 import time
 import calendar
 
+# time and calender for timestamp variable
+
 dna = api.DNACenterAPI(base_url='https://sandboxdnac2.cisco.com',
                        username='devnetuser', password='Cisco123!')
 
@@ -50,6 +52,9 @@ print(device)
 ######## HEALTH CHECKS ################
 ############# CLIENTS ##############
 # Get Client Health with Epoch Datetime
+# epoch_datetime is int and must parse it to string 
+# calender to get the date and tome to get the time 
+
 epoch_datetime = calendar.timegm(time.gmtime())
 
 client_health = dna.clients.get_overall_client_health(

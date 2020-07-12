@@ -1,0 +1,22 @@
+# Open Meraki dashboard - end point is always   Https://dashboard.meraki.com/api/v0
+#setup the Environment Variables - Organization ID , Network ID , Meraki Key.
+# store the key in the header  'X-Cisco-Meraki-API-Key': "6bec40cf957de430a6f1f2baa056b99a4fac9ea0" and make it an Environment Variable ,
+# {{X-Cisco-Meraki-API-Key}} to pass it in each request.
+#Add Organization name and it's ID
+
+# Https://dashboard.meraki.com/api/v0/organizations
+#Response body - Test -
+#to get list of organizations IDs 
+
+Https://dashboard.meraki.com/api/v0/organizations/{{organizationid}}/networks
+
+#to get the list of networks in each organization ID
+
+#get the devices in each network
+
+Https://dashboard.meraki.com/api/v0/networks/{{networkid}}/devices
+
+#we can use it in troubleshooting 
+
+Https://dashboard.meraki.com/api/v0/networks/{{networkid}}/clients
+

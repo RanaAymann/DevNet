@@ -1,0 +1,26 @@
+  
+Why plain text?
+- structures for computer
+- readable by humans
+- open and extensible
+- self describing
+- long lifespan
+
+
+XML:
++ legacy support
++ supported by SOAP
+- long
+
+JSON:
++ popular
++ lightweight
++ native to JS
++ compressed to a single line, whitespace does not have any meaning
+- short
+
+YAML:
++ human friendly
++ compact
++ ideal for configuration
+- whitespace matters

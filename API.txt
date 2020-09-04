@@ -1,0 +1,7 @@
+Web Based API :
+1- SOAP: xml based , request body is so large consume mush BW.
+2- gRPC : specialized version of RPC -  xml , Json , protbufs fromats - do something and tell me the result.
+3- REST : build upon HTTP, HTTP method verb + Base URL (Server) + API End Point
+
+
+Webhooks: Web callbacks , Postbacks.

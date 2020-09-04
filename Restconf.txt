@@ -1,0 +1,77 @@
+# RESTCONF API
+Router config:
+
+# enable http because restconf supports https
+# authentication local means using the local database in the router = running config
+
+
+conf t
+username admin priv 15 secret Cisco!23
+ip http secure-server
+ip http authentication local
+restconf
+int gig 1
+ip add 192.168.1.56 255.255.255.0
+no shut
+router ospf 1
+network 0.0.0.0 255.255.255.255 area 0
+ip route 0.0.0.0 0.0.0.0 192.168.1.1
+router eigrp 1
+net 0.0.0.0
+end
+debug ip http ssl error
+
+# the router has ssl certificate 
+
+
+remember authentication/authorization
+-user "admin:Cisco!23"
+
+remember header:
+Content-Type:application/yang-data+json
+
+See the video for the details.
+
+GET:
+
+https://192.168.1.56/restconf/
+https://192.168.1.56/restconf/data/ne...
+https://{{host}}/restconf/data/netcon...
+https://192.168.1.56/restconf/data/Ci...
+https://192.168.1.56/restconf/data/Ci...
+https://192.168.1.56/restconf/data/Ci...
+https://192.168.1.56/restconf/data/Ci...
+https://192.168.1.56/restconf/data/Ci...
+https://192.168.1.56/restconf/data/ie...
+https://192.168.1.56/restconf/data/Ci...
+
+https://192.168.1.56/restconf/data/Ci...
+
+https://192.168.1.56/restconf/data/Ci...
+
+
+
+POST:
+https://192.168.1.56/restconf/data/ie...
+
+Body:
+{
+    "ietf-interfaces:interface": {
+        "name": "Loopback99",
+        "type": "iana-if-type:softwareLoopback",
+        "enabled": true,
+        "ietf-ip:ipv4": {
+          "address": [
+            {
+              "ip": "99.99.99.99",
+              "netmask": "255.255.255.255"
+            }
+          ]
+        }
+    }
+}
+
+
+
+
+

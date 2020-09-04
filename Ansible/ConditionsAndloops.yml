@@ -1,0 +1,49 @@
+---
+- hosts: linuxhosts
+  become: true
+  tasks:
+    - name: install nginx on ubuntu
+      apt: name=nginx state=latest
+      # This will generate an error on CentOS
+      ignore_errors: yes
+      # When it fails, want to store the failure in a variable
+      # for next task to run in case of failure
+      register: results
+
+    - name: install nginx on centos
+      yum: name=nginx state=latest
+      when: results|failed
+      
+# when acts like if then in the opposite  
+ 
+ 
+ 
+      
+  ---
+- hosts: linuxhosts
+  become: true
+  tasks:
+    - name: uninstall nginx on ubuntu
+      apt: name=nginx state=absent
+      when: ansible_os_family == "Debian"
+
+    - name: uninstall nginx on centos
+      yum: name=nginx state=absent
+      when: ansible_os_family == "RedHat"
+      
+   
+   ---
+- name: Ansible loops
+  hosts: ubuntu
+  become: yes
+  tasks:
+    - name: Create a file
+      shell: echo 'Begin file' > /home/rana/Desktop/loops.txt
+    - name: install packages
+      shell: echo "{{item}}" >> /home/rana/Desktop/loops.txt
+      with_items:
+        - vim
+        - nano
+        - python
+        
+# with makes for loop  - For item in items      

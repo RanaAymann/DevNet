@@ -1,0 +1,39 @@
+vManage
+
+vManage is the Network Management System (NMS) component that provides a "single pane of glass" for Day 0, Day 1 and Day 2 operations.
+ vManage also includes centralized provisioning, monitoring, and troubleshooting, and is the component where policies and templates are defined.
+  vManage supports both single tenant for a single customer or partner and multi-tenant for managed services deployments.
+
+Role-based access control (RBAC) is enforced at the vManage level. Different built-in roles are available, including operator, which is a read-only role,
+ and netadmin, which offers complete administrative access to the fabric. Custom user groups can be defined with very granular access options.
+
+The REST API that you will discuss in the next section is also exposed in vManage. This programmable API enables access to all the capabilities of 
+the fabric so that you can develop your own applications on top of it or integrate with other software solutions, like ServiceNow, Remedy, and Cisco DNA Center.
+vSmart
+
+vSmart is the main control plane component of the solution. It facilitates fabric discovery, disseminates control plane information between vEdges, 
+distributes data plane policies to vEdge routers, and implements control plane policies.
+vBond
+
+vBond is the orchestrator of the fabric. It orchestrates both the control plane and the management plane and is the first point of authentication 
+for all the fabric components. vBond distributes the list of vSmart and vManage components to the vEdge routers, facilitates NAT traversal and requires
+ universally reachable IP address by all the fabric components.
+
+If you are using public Internet as part of your transport for the SD-WAN fabric, the vBond is the only component that needs a public IP address.
+ This address can reside behind port forwarding. Like the vManage, vBond works in both single and multi-tenant environments.
+vEdge
+
+vManage, vSmart, and vBond are virtual and can run in both VMware ESXi and KVM virtualization environments. vEdges are the routers that get deployed
+ at all the sites throughout the fabric.
+
+vEdges secure the data plane. They establish secure control plane connections with the vSmart controllers with the proprietary Overlay Management Protocol (OMP)
+ and enforce the desired data plane policies. Zero Touch Deployment is supported for sites that lack technically-savvy personnel.
+
+vEdges support traditional routing protocols (OSPF, BGP) and first hop redundancy protocols (VRRP). They can be virtual, but hardware appliances are also available
+ in a wide range of configurations based on number of ports and throughput.
+IOS XE
+
+With IOS XE SD-WAN software image, SD-WAN capability can be enabled on select ISR 1000 series, ISR 4000 series and ASR 1000 series routers. 
+A select number of ENCS 5000 series platforms also support IOS XE SD-WAN software images and can be SD-WAN enabled. CSR1000V also supports 
+the SD-WAN image and can be used in public cloud environments to extend the on-premises infrastructure and create hybrid clouds. For more information, 
+refer to the data sheets of the platform you are interested in.

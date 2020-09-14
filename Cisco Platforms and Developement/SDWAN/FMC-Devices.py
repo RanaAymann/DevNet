@@ -5,7 +5,7 @@ import requests
 url = "https://fmcrestapisandbox.cisco.com"
 login_url = '/api/fmc_platform/v1/auth/generatetoken'
 headers = {'Content-Type': 'application/json'}
-user = 'knox'
+user = 'Rana'
 pw = 'BtNdJM9k'
 
 
